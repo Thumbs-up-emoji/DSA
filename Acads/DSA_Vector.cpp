@@ -2,6 +2,7 @@
 #include <vector>
 #include <thread> // For this_thread::sleep_for
 #include <chrono> // For chrono::milliseconds
+#include <utility>
 
 using namespace std;
 
@@ -23,6 +24,18 @@ public:
     // Size function to return the size of private_v
     int Size() {
         return private_v.size();
+    }
+
+    int GetElement(int i){
+        return private_v[i];
+    }
+
+    void SetElement(int i, int value){
+        private_v[i] = value;
+    }
+
+    void Swap(int i, int j){
+        swap(private_v[i], private_v[j]);
     }
 
     // Greater function to compare elements at indices i and j
