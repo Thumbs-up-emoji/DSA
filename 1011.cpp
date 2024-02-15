@@ -1,3 +1,7 @@
+//explanation:
+//It simulates the process of loading the items onto the ship day by day. It iterates over the weights vector, and for each weight, it checks if adding it to the current day's weight (daywt) would exceed mid. If it would, it starts a new day and resets daywt to the current weight. Otherwise, it adds the weight to daywt.
+//After going through all the weights, if daywt is greater than 0, it increments day because there are still some weights left to be shipped on a new day. Then, it checks if the number of days day is greater than the given days. If it is, it means that the current guess mid for the ship's weight capacity is too small, so it sets l to mid + 1. Otherwise, it means that the current guess mid is large enough, so it sets r to mid - 1.
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -32,3 +36,4 @@ int main(){
     int days = 5;
     cout << sol.shipWithinDays(weights, days) << endl;
     return 0;
+}
